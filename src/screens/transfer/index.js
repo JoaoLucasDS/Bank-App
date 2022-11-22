@@ -101,13 +101,11 @@ export default function Transfer({ navigation }) {
             if (response == "sucess") {
                 const newBalance = await getBalance();
 
-                //CHECKARISSO
                 dispatch(updateBalance(newBalance.data));
 
                 const loggedUser = await authenticated();
                 dispatch(set(loggedUser));
-                console.log(newBalance)
-                console.log(userAccount.balance)
+
                 Alert.alert("Transferido", ("Não há:" + value + "enviado para a conta" + receiverAccount));
                 navigation.navigate('Home');
             } else {

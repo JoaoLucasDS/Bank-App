@@ -1,6 +1,5 @@
 import React from "react"
 import { createStackNavigator } from '@react-navigation/stack';
-import { createNavigationContainerRef } from '@react-navigation/native';
 
 import Login from '../login';
 import Register from '../register';
@@ -11,14 +10,6 @@ import BankStatement from "../bank statement";
 
 
 const Stack = createStackNavigator();
-
-export const navigationRef = createNavigationContainerRef()
-
-export function navigate(name) {
-  if (navigationRef.isReady()) {
-    navigationRef.navigate(name);
-  }
-}
 
 const StackScreen = ({navigation}) => (
     <Stack.Navigator initialRouteName="Login">
